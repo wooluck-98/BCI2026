@@ -118,11 +118,6 @@ class EEGNetEncoder(nn.Module):
 
 
 class DANN_EEGNet(nn.Module):
-    """
-    EEGNet encoder + Task(Class) classifier + Domain classifier
-    - Task: Seizure vs Non-seizure
-    - Domain: Patient ID
-    """
     def __init__(self, n_chans: int, n_times: int, n_classes: int, n_domains: int,
                  latent_dim: int = 64, lambda_domain: float = 1.0):
         super().__init__()
