@@ -146,13 +146,6 @@ class DANN_EEGNet(nn.Module):
 
         return class_logits, domain_logits
 
-
-# ============================================================
-# 3. CHB-MIT 전처리 결과 로딩 유틸
-#    - 가정: 환자별로 seizure / non-seizure 세그먼트가 .npy로 저장되어 있음
-#    - 각 세그먼트: shape = (num_segments, n_chans, n_times)
-# ============================================================
-
 def load_patient_segments(root: str, patient_id: str) -> Tuple[np.ndarray, np.ndarray]:
     """
     예시용 로더 (본인 환경에 맞게 파일 이름/구조 수정 필요)
