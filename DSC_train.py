@@ -14,13 +14,6 @@ from sklearn.metrics import (
 )
 
 class SamplingScheduler:
-    """
-    Dynamic curriculum sampling scheduler.
-    - D_train: 초기 클래스 비율 [#non_seizure / #seizure, 1]
-    - SF(n):   epoch마다 1 -> 0으로 감소하는 cos 스케줄
-    - D_target(n) = D_train ** SF(n)
-      이후 batch_size에 맞게 정규화해서 각 클래스 샘플 수를 만듬.
-    """
     def __init__(self, num_epochs: int, batch_size: int, class_counts: np.ndarray):
         """
         :param num_epochs: 총 학습 epoch 수 (N)
