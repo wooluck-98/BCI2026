@@ -138,10 +138,6 @@ class DANN_EEGNet(nn.Module):
         )
 
     def forward(self, x):
-        """
-        :param x: (B, C, T)
-        :return: class_logits, domain_logits
-        """
         feat = self.encoder(x)  # (B, latent_dim)
         class_logits = self.label_classifier(feat)
 
