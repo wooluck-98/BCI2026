@@ -147,15 +147,6 @@ class DANN_EEGNet(nn.Module):
         return class_logits, domain_logits
 
 def load_patient_segments(root: str, patient_id: str) -> Tuple[np.ndarray, np.ndarray]:
-    """
-    예시용 로더 (본인 환경에 맞게 파일 이름/구조 수정 필요)
-    - root/
-        ├─ seizure/{patient_id}_seizure.npy
-        └─ nonseizure/{patient_id}_nonseizure.npy
-
-    return:
-        X: (N, C, T), y: (N,)  (0=non-seizure, 1=seizure)
-    """
     seizure_path = os.path.join(root, "seizure", f"{patient_id}_seizure.npy")
     non_path = os.path.join(root, "nonseizure", f"{patient_id}_nonseizure.npy")
 
