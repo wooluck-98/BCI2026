@@ -25,10 +25,6 @@ class SamplingScheduler:
         self.D_train = np.array([non_seizure / seizure, 1.0], dtype=np.float32)
 
     def scheduler_function(self, epoch: int) -> float:
-        """
-        SF(n) = cos( n/N * pi/2 )
-        epoch은 0-based라 n = epoch+1 으로 사용.
-        """
         n = epoch + 1
         N = self.num_epochs
         return math.cos((n / N) * (math.pi / 2.0))
