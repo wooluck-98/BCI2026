@@ -13,12 +13,6 @@ from sklearn.metrics import (
     confusion_matrix
 )
 
-# ============================================================
-# 1. Sampling Scheduler (Curriculum Learning for Imbalance)
-#    - 논문 Eq.(2) SF(n) = cos( n/N * pi/2 )
-#    - 논문 Eq.(3) D_target(n) = D_train ** SF(n)
-# ============================================================
-
 class SamplingScheduler:
     """
     Dynamic curriculum sampling scheduler.
