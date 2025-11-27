@@ -165,11 +165,6 @@ def load_patient_segments(root: str, patient_id: str) -> Tuple[np.ndarray, np.nd
 def build_chbmit_dataset(root: str,
                          all_patients: List[str],
                          target_patient: str):
-    """
-    Leave-one-patient-out 셋업:
-      - target_patient: 테스트용 환자
-      - 나머지 환자: 학습용 (domain label = patient index)
-    """
     train_X_list, train_y_list, train_domain_list = [], [], []
     test_X, test_y = None, None
 
