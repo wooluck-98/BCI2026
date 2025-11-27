@@ -15,11 +15,6 @@ from sklearn.metrics import (
 
 class SamplingScheduler:
     def __init__(self, num_epochs: int, batch_size: int, class_counts: np.ndarray):
-        """
-        :param num_epochs: 총 학습 epoch 수 (N)
-        :param batch_size: 한 iteration에서 쓸 총 배치 사이즈
-        :param class_counts: 각 클래스(0: non-seizure, 1: seizure) 샘플 수
-        """
         self.num_epochs = num_epochs
         self.batch_size = batch_size
 
