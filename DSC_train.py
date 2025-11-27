@@ -210,10 +210,6 @@ def compute_metrics(y_true, y_pred, y_prob):
 def train_one_epoch(model, train_dataset, train_y_np, num_epochs, epoch,
                     batch_size, device,
                     lambda_domain=1.0):
-    """
-    Sampling Scheduler를 epoch마다 적용해서
-    seizure / non-seizure 비율을 점진적으로 맞춰가는 학습.
-    """
     model.train()
     criterion_task = nn.CrossEntropyLoss()
     criterion_domain = nn.CrossEntropyLoss()
