@@ -30,10 +30,6 @@ class SamplingScheduler:
         return math.cos((n / N) * (math.pi / 2.0))
 
     def get_class_batch_sizes(self, epoch: int) -> Tuple[int, int]:
-        """
-        현재 epoch에서 각 클래스별 배치 크기 반환.
-        :return: (batch_non_seizure, batch_seizure)
-        """
         g_l = self.scheduler_function(epoch)  # SF(n)
         # D_target = D_train ** g_l
         D_target = self.D_train ** g_l
