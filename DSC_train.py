@@ -68,11 +68,6 @@ class GradReverse(nn.Module):
 
 
 class EEGNetEncoder(nn.Module):
-    """
-    아주 간단하게 구현한 EEGNet-like encoder.
-    (Lawhern et al., 2018 구조를 축약한 버전)
-    논문에서는 EEGNet [20]을 encoder로 사용. :contentReference[oaicite:1]{index=1}
-    """
     def __init__(self, n_chans: int, n_times: int, latent_dim: int = 64):
         super().__init__()
 
