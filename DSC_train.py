@@ -48,11 +48,6 @@ class SamplingScheduler:
         return batch_non_seizure, batch_seizure
 
 class GradReverseFn(torch.autograd.Function):
-    """
-    Gradient Reversal Layer (Ganin & Lempitsky, 2016)
-    forward: identity
-    backward: gradient * (-lambda_)
-    """
     @staticmethod
     def forward(ctx, x, lambda_):
         ctx.lambda_ = lambda_
