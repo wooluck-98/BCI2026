@@ -186,11 +186,6 @@ def build_chbmit_dataset(root: str,
 
     return train_X, train_y, train_domain, test_X, test_y
 
-
-# ============================================================
-# 4. Metric / Train / Evaluation
-# ============================================================
-
 def compute_metrics(y_true, y_pred, y_prob):
     cm = confusion_matrix(y_true, y_pred)
     tn, fp, fn, tp = cm.ravel()
