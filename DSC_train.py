@@ -47,13 +47,6 @@ class SamplingScheduler:
 
         return batch_non_seizure, batch_seizure
 
-
-# ============================================================
-# 2. DANN 기반 EEGNet 모델
-#    - EEGNet encoder (feature) + Label Classifier + Domain Classifier
-#    - Gradient Reversal Layer (GRL) 포함
-# ============================================================
-
 class GradReverseFn(torch.autograd.Function):
     """
     Gradient Reversal Layer (Ganin & Lempitsky, 2016)
